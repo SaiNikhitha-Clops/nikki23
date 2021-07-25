@@ -8,7 +8,7 @@ agent {
   
       tools {
 
-        maven 'maven-3.8.1'
+        maven 'default maven'
     }
     
     stages {
