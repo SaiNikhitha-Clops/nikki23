@@ -22,9 +22,9 @@ agent {
         
     stage('SonarQube Analysis') {
       environment {
-        SCANNER_HOME = tool 'sonarqube-4.6.2'
-        ORGANIZATION = "scanner"
-        PROJECT_NAME = "scanner"
+        SCANNER_HOME = tool 'sonar_scanner'
+        ORGANIZATION = "3"
+        PROJECT_NAME = "3"
       }
       steps {
         withSonarQubeEnv('sonarqube') {
@@ -87,8 +87,8 @@ agent {
 def notifyBuild(String buildStatus = 'STARTED', String colorCode = '#5492f7', String notify = '') {
 
   def project = 'freestyleproject'
-  def channel = "@manoj.k"
-  def base = "https://github.com/devaprabhu1995/freestyleproject.git/${project}/commits/"
+  def channel = "sainikhitha.p@cloudifyops.com"
+  def base = "https://github.com/SaiNikhitha-Clops/nikki23.git/${project}/commits/"
 
   def commit = sh(returnStdout: true, script: 'git log -n 1 --format="%H"').trim()
   def link = "${base}${commit}"
